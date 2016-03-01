@@ -1,0 +1,18 @@
+{
+"ec2-api" : {
+    "check"     : "check_procs",
+    "params"    : "-c 1:100 -C ec2-api -u ec2api"
+    },
+"nova-api" : {
+    "check"     : "check_http",
+    "params"    : "-S -H 127.0.0.1 -p 8774"
+    },
+"glance-api" : {
+    "check"     : "check_http",
+    "params"    : "-S -H 127.0.0.1 -p 9292"
+    },
+"glance-registry" : {
+    "check"     : "check_procs",
+    "params"    : "-c 1:100 -C glance-registry -u glance"
+    }
+}
